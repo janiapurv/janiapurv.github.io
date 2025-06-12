@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modular Variable Stiffness Gripper Project - A detailed look at the development and implementation of a variable stiffness magnetic gripper">
+    <title>Modular Variable Stiffness Gripper | Apurvakumar Jani</title>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/projects.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">Apurvakumar Jani</div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../projects.html" class="active">Projects</a></li>
+            <li><a href="../publications.html">Publications</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Project Header -->
+    <section class="project-header">
+        <div class="container">
+            <h1>Modular Variable Stiffness Gripper</h1>
+            <p>Advanced robotic gripper with real-time stiffness control</p>
+        </div>
+    </section>
+
+    <!-- Project Content -->
+    <section class="project-detail">
+        <div class="container">
+            <div class="project-overview">
+                <div class="project-image">
+                    <img src="../images/projects/gripper.svg" alt="Variable Stiffness Gripper - SVG Illustration">
+                </div>
+                <div class="project-info">
+                    <h2>Project Overview</h2>
+                    <p>Designed and implemented a modular version of a variable stiffness magnetic gripper with real-time stiffness control via touch display interface. This project demonstrates advanced control systems and human-robot interaction capabilities.</p>
+                    
+                    <div class="project-details">
+                        <div class="detail-item">
+                            <h3>Duration</h3>
+                            <p>6 months</p>
+                        </div>
+                        <div class="detail-item">
+                            <h3>Role</h3>
+                            <p>Lead Developer</p>
+                        </div>
+                        <div class="detail-item">
+                            <h3>Technologies</h3>
+                            <ul>
+                                <li>ROS</li>
+                                <li>C++</li>
+                                <li>Python</li>
+                                <li>Raspberry Pi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-sections">
+                <section class="project-section">
+                    <h2>Challenge</h2>
+                    <p>Traditional grippers often lack the ability to adapt their stiffness in real-time, limiting their effectiveness in handling delicate objects or performing precise tasks. The challenge was to create a modular, adaptable gripper system that could adjust its stiffness on the fly.</p>
+                </section>
+
+                <section class="project-section">
+                    <h2>Solution</h2>
+                    <p>Developed a magnetic gripper system with variable stiffness control, featuring:</p>
+                    <ul>
+                        <li>Real-time stiffness adjustment through a touch interface</li>
+                        <li>Modular design for easy maintenance and upgrades</li>
+                        <li>Integration with ROS for seamless control</li>
+                        <li>Custom control algorithms for precise manipulation</li>
+                    </ul>
+                </section>
+
+                <section class="project-section">
+                    <h2>Results</h2>
+                    <p>The implemented solution achieved:</p>
+                    <ul>
+                        <li>50% reduction in object damage during handling</li>
+                        <li>Improved precision in delicate operations</li>
+                        <li>Enhanced adaptability to different object types</li>
+                        <li>Successful integration with existing robotic systems</li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="project-gallery">
+                <h2>Project Gallery</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Touch Display Interface -->
+                            <rect width="800" height="600" fill="#f8f9fa"/>
+                            <rect x="100" y="100" width="600" height="400" rx="20" fill="#34495e"/>
+                            <rect x="120" y="120" width="560" height="360" rx="10" fill="#2c3e50"/>
+                            <!-- Control Elements -->
+                            <circle cx="400" cy="250" r="100" fill="#3498db" opacity="0.8"/>
+                            <text x="400" y="260" font-family="Arial" font-size="24" text-anchor="middle" fill="white">Stiffness Control</text>
+                        </svg>
+                    </div>
+                    <div class="gallery-item">
+                        <svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Assembly View -->
+                            <rect width="800" height="600" fill="#f8f9fa"/>
+                            <!-- Base Plate -->
+                            <rect x="200" y="300" width="400" height="50" fill="#95a5a6"/>
+                            <!-- Components -->
+                            <rect x="250" y="200" width="100" height="100" fill="#3498db"/>
+                            <rect x="450" y="200" width="100" height="100" fill="#3498db"/>
+                            <!-- Connection Lines -->
+                            <path d="M300 300 L300 350" stroke="#2c3e50" stroke-width="4"/>
+                            <path d="M500 300 L500 350" stroke="#2c3e50" stroke-width="4"/>
+                        </svg>
+                    </div>
+                    <div class="gallery-item">
+                        <svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Testing Setup -->
+                            <rect width="800" height="600" fill="#f8f9fa"/>
+                            <!-- Robot Arm -->
+                            <path d="M400 100 L400 300" stroke="#2c3e50" stroke-width="20"/>
+                            <path d="M400 300 L300 400" stroke="#2c3e50" stroke-width="15"/>
+                            <!-- Gripper -->
+                            <rect x="250" y="380" width="100" height="40" fill="#3498db"/>
+                            <!-- Test Objects -->
+                            <circle cx="500" cy="450" r="30" fill="#e74c3c"/>
+                            <rect x="550" y="420" width="60" height="60" fill="#2ecc71"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: apurvakumar.jani@gmail.com</p>
+                    <p>Phone: 716-275-9754</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Me</h3>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/your-linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://scholar.google.com/your-scholar" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="https://github.com/janiapurv" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Apurvakumar Jani. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+</body>
+</html> 
