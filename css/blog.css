@@ -1,0 +1,40 @@
+/* Blog Header */
+.blog-header {
+    padding: 8rem 0 4rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    text-align: center;
+}
+
+.blog-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.blog-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Blog Content */
+.blog-content {
+    padding: 4rem 0;
+    background: var(--light-bg);
+}
+
+.blog-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .blog-header {
+        padding: 6rem 0 3rem;
+    }
+
+    .blog-header h1 {
+        font-size: 2.5rem;
+    }
+} 
