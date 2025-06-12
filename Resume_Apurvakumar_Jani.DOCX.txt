@@ -1,0 +1,90 @@
+﻿Apurvakumar Jani
+apurvakumar.jani@gmail.com  | C: 716-275-9754 | LinkedIn | Google Scholar 
+ROBOTICS CONTROL |LINUX |C++ | ROS2 | JAVA | PYTHON | SCRUM| MATLAB |MACHINE LEARNING| AI 
+Summary
+* Self-driven roboticist with 8+ years of experience in Robotics and software Design. Passionate about making an impact in robotics.
+Education and Training
+09/2020  
+Buffalo
+	Master of Science (Thesis) in Mechatronics and Control   University at Buffalo, SUNY
+* 3.9 GPA
+* Coursework: Mechatronics, Advanced Control Systems, Manufacturing Automation, Continuous Control System, System Analysis, Design and Optimization, Heuristic Optimization, Human Robot Interaction
+* Teaching Aid/Grader : Digital Control Systems, Manufacturing automation, Design project
+	Experience
+10/2021 -current  
+SYMBOTIC
+Greater Boston, MA
+	Advanced Software Engineer - Robotics controls
+* Feature development of main control software of robot using C++ and ROS2
+* Reduced robot downtime and wrangle due to estimation error by 50%
+* Part of designing scalable software microservices
+* Diagnosed and Fixed critical canOpen related issues which contributed high downtime of robot
+* Improved driving control and estimation algorithm of warehouse robot
+* Triage issue with path  planning and collision avoidance to facilitate the smooth site operation
+* Doing research to find the optimal robotics algorithm for driving control and estimation 
+* Scrum Master for controls team
+	
+
+03/2021 -10/2021  
+SYMBOTIC
+Greater Boston, MA
+	Robotics Test Engineer
+* Developing and improving test setup and scripts written in C++ and python. 
+* Troubleshooting and testing the control and software changes on the robots 
+* Developing simulation modules and executables for the Gazebo simulation platform
+* Bridge communication gap between  Hardware and software team for the robot development
+
+
+	12/2018 – 03/2021  
+HILS Lab, University at Buffalo
+Buffalo, NY
+	Robotics Researcher
+* I was a part of DARPA offset project where I was responsible for development and implementation of robust and flexible multi robot formation control algorithms. Also contributed as a developer in pybullet based low fidelity swarm learning environment to teach AI to swarm of UAVs and UGVs with human in the loop interfaces. 
+* Developed robotics control framework using ROS, Python and C++ for robotic arm
+* Designed a modular version of a variable stiffness magnetic gripper (Gripper patented by HILS lab).
+* Implemented real-time stiffness control of fingers via Touch display and developed GUI integrated with Raspberry pi
+* Built 3D printed prototypes for various electro-mechanical systems
+	
+
+07/2016 - 07/2018  
+TATA Technologies
+Pune, India
+	Design R & D Engineer 
+* Worked onsite at TATA Motors plant. My job was to identify and troubleshoot the issues arising for the production of new vehicles. Provided technical support in developing ladder logic & HMI for Siemens PLC systems.
+* Carried out validation tests for integration of electro mechanical components on the production line.
+* Ensured integration of vehicles by establishing communication between cross functional teams and vendors.
+	
+
+Skills
+* Domain skills: Control systems, Mechatronics design, Optimization, GD & T, DFMEA
+* Programming Languages & Software: Python, C++, C#, JAVA, MySQL, MATLAB, Simulink, LabView, PLC Ladder,
+* Operating Systems: Linux, ROS2, MAVROS
+* Embedded Protocols: CAN, I2C, UART, SPI
+	
+
+	Publications
+* Hemanth Manjunatha, Joseph Distefano, Apurv Jani, Ehsan Esfahani, Souma Chowdhury, Payam Ghassemi , ‘Using Physiological Measurements to Analyze the Tactical Decisions in Human Swarm Teams',  IEEE SMC (Systems, Man, and Cybernetics )- 2020 
+* Thesis, Apurv Jani Interactive Shape Control of Swarm of Mobile Robots using Geographic Information System (GIS) based Shape Model, University at Buffalo, SUNY, 2020
+* Amir Behjat, Hemanth Manjunatha, Prajit KrisshnaKumar, Apurv Jani, Leighton Collins, Payam Ghassemi, Joseph Distefano, ‘Learning Robot Swarm Tactics over Complex Adversarial Environments’  IEEE MRS (Multi-Robot and Multi-Agent System) 2021 (Paper Accepted)
+Relevant Projects
+Modular design and real time grasp control for variable stiffness end-effector
+* Conceptualized modularity of gripper for making it commercially ready
+* Implemented real-time stiffness control of fingers via Touch display (HMI) integrated with Raspberry pi
+* Schunk LWA4P manipulator used for experiments. C++ and ROS are used to develop control framework
+Product shape detection using vision sensor
+* Implemented product shape detection for conveyor belt application using Vision sensor 
+* OpenCV is used for image processing and V-rep is used for simulation 
+Servo Motor Parameter Estimation & control by interfacing hardware with LabVIEW Software
+* Interfaced QUANSER SRV02 series rotary servo plant to computer via LABVIEW software
+* Designed and tuned of PID controller circuit for motor and parameter estimation
+Nonlinear control of 2 link manipulator using Disturbance Observer
+* Developed of nonlinear model of plant using Simulink
+* Control Performance improved with the addition of Disturbance observer
+Certification
+Certified Scrum Master (PSM1 Scrum.org)
+
+
+Activities 
+Board of Directors, Graduate Student Association UB
+* Organized social gatherings for graduate students and conveyed student concerns to upper management
+Led cleanliness campaign in suburban areas of Pune, India
