@@ -4,54 +4,157 @@
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: white;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.publications-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="white" stroke-width="0.5" opacity="0.1"/></svg>') repeat;
+    opacity: 0.1;
+    animation: rotate 60s linear infinite;
 }
 
 .publications-header h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
 }
 
 .publications-header p {
     font-size: 1.2rem;
     opacity: 0.9;
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Scholar Stats */
+.scholar-stats {
+    padding: 4rem 0;
+    background: var(--light-bg);
+    position: relative;
+}
+
+.scholar-stats h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    position: relative;
+}
+
+.scholar-stats h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--secondary-color);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.stat-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.stat-item i {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.stat-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--secondary-color);
 }
 
 /* Publications List */
 .publications-list {
     padding: 4rem 0;
-    background: var(--light-bg);
+    background: white;
 }
 
 .publication-item {
-    background: white;
-    border-radius: 10px;
+    background: var(--light-bg);
+    border-radius: 15px;
     padding: 2rem;
     margin-bottom: 2rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: var(--card-shadow);
     transition: var(--transition);
 }
 
 .publication-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    box-shadow: var(--hover-shadow);
 }
 
 .publication-content h3 {
     color: var(--primary-color);
+    font-size: 1.4rem;
     margin-bottom: 1rem;
-    font-size: 1.5rem;
+    line-height: 1.4;
 }
 
-.publication-content .authors {
+.authors {
     color: var(--text-color);
-    font-style: italic;
+    font-size: 1.1rem;
     margin-bottom: 0.5rem;
 }
 
-.publication-content .venue {
+.venue {
     color: var(--secondary-color);
-    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.publication-meta {
     margin-bottom: 1.5rem;
+}
+
+.citations {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--secondary-color);
+    font-size: 1rem;
+}
+
+.citations i {
+    font-size: 1.1rem;
 }
 
 .publication-links {
@@ -63,88 +166,118 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    background: var(--light-bg);
-    color: var(--primary-color);
+    padding: 0.8rem 1.5rem;
+    background: var(--secondary-color);
+    color: white;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 25px;
+    font-weight: 500;
     transition: var(--transition);
 }
 
 .btn:hover {
-    background: var(--secondary-color);
-    color: white;
+    background: var(--primary-color);
     transform: translateY(-2px);
 }
 
-/* Google Scholar Stats */
-.scholar-stats {
-    padding: 4rem 0;
-    background: white;
-}
-
-.scholar-stats h2 {
-    text-align: center;
-    margin-bottom: 3rem;
-    color: var(--primary-color);
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    text-align: center;
-}
-
-.stat-item {
-    padding: 2rem;
-    background: var(--light-bg);
-    border-radius: 10px;
-    transition: var(--transition);
-}
-
-.stat-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.stat-item i {
-    font-size: 2rem;
-    color: var(--secondary-color);
-    margin-bottom: 1rem;
-}
-
-.stat-item h3 {
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
-
-.stat-number {
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--secondary-color);
+.btn i {
+    font-size: 1.1rem;
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .publications-header h1 {
+        font-size: 3rem;
+    }
+
+    .scholar-stats h2 {
+        font-size: 2.2rem;
+    }
+}
+
 @media (max-width: 768px) {
     .publications-header {
-        padding: 6rem 0 3rem;
+        padding: 6rem 1rem 3rem;
     }
 
     .publications-header h1 {
         font-size: 2.5rem;
     }
 
+    .publications-header p {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+
+    .scholar-stats {
+        padding: 3rem 1rem;
+    }
+
+    .scholar-stats h2 {
+        font-size: 2rem;
+    }
+
+    .stats-grid {
+        gap: 1.5rem;
+    }
+
     .publication-item {
         padding: 1.5rem;
     }
 
-    .publication-links {
-        flex-wrap: wrap;
+    .publication-content h3 {
+        font-size: 1.3rem;
     }
 
-    .stats-grid {
-        grid-template-columns: 1fr;
+    .authors {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .publications-header {
+        padding: 5rem 0.5rem 2rem;
+    }
+
+    .publications-header h1 {
+        font-size: 2rem;
+    }
+
+    .publications-header p {
+        font-size: 1rem;
+    }
+
+    .scholar-stats {
+        padding: 2rem 0.5rem;
+    }
+
+    .scholar-stats h2 {
+        font-size: 1.8rem;
+    }
+
+    .stat-item {
+        padding: 1.5rem;
+    }
+
+    .stat-item i {
+        font-size: 2rem;
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+    }
+
+    .publication-item {
+        padding: 1.2rem;
+    }
+
+    .publication-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
     }
 }
 
