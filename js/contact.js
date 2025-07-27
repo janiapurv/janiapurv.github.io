@@ -171,6 +171,11 @@ function simulateFormSubmission(data) {
 // Add input event listeners for real-time validation
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('contactForm');
+
+    if (!form) {
+        return;
+    }
+
     const inputs = form.querySelectorAll('input, textarea');
 
     inputs.forEach(input => {
@@ -181,4 +186,6 @@ document.addEventListener('DOMContentLoaded', () => {
             validateForm(formData);
         });
     });
-}); 
+
+    form.addEventListener('submit', handleSubmit);
+});
