@@ -3,84 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Apurvakumar Jani - Get in touch for collaborations, research opportunities, or questions about robotics and control systems">
+    <meta name="description" content="Contact Apurvakumar Jani - Reach out for collaborations in robotics controls, software design, and engineering research">
     <title>Contact | Apurvakumar Jani</title>
     
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
-    </script>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/contact.css">
     
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-brand">Apurvakumar Jani</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="publications.html">Publications</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html" class="active">Contact</a></li>
-        </ul>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <span class="nav-prompt">apurva</span><span class="nav-at">@</span><span class="nav-host">portfolio</span><span class="nav-colon">:</span><span class="nav-path">~</span><span class="nav-dollar">$</span>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">~/home</a></li>
+                <li><a href="projects.html">~/projects</a></li>
+                <li><a href="publications.html">~/publications</a></li>
+                <li><a href="blog.html">~/blog</a></li>
+                <li><a href="contact.html" class="active">~/contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
-    <!-- Contact Header -->
-    <section class="contact-header">
+    <!-- Page Header -->
+    <section class="page-header">
         <div class="container">
-            <h1>Get in Touch</h1>
-            <p>Interested in collaborating or have questions? I'd love to hear from you!</p>
+            <h1><span class="prompt">$</span> ssh guest@apurva.dev</h1>
+            <p>Establish connection to send a message</p>
         </div>
     </section>
 
     <!-- Contact Content -->
-    <section class="contact-content">
+    <section class="section">
         <div class="container">
-            <div class="contact-grid">
-                <!-- Contact Form -->
-                <div class="contact-form">
-                    <h2>Send a Message</h2>
-                    <form id="contact-form" class="contact-form" action="https://formspree.io/f/mqabqnke" method="POST">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
+            <div class="contact-grid fade-in">
+                <!-- Terminal Form -->
+                <div class="contact-terminal">
+                    <div class="terminal-bar">
+                        <span class="terminal-bar-dot red"></span>
+                        <span class="terminal-bar-dot yellow"></span>
+                        <span class="terminal-bar-dot green"></span>
+                        <span class="terminal-bar-title">guest@apurva.dev — bash</span>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="ssh-header">
+                            Last login: <span id="current-time"></span> on ttys001<br>
+                            Connection established. Ready to receive transmission...
                         </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
+                        
+                        <form id="contact-form" action="https://formspree.io/f/mqabqnke" method="POST">
+                            <div class="form-group">
+                                <label for="name">Name:</label>
+                                <input type="text" id="name" name="name" required placeholder="Apurva's Guest">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" required placeholder="guest@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject:</label>
+                                <input type="text" id="subject" name="subject" required placeholder="Project collaboration / Opportunity">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message:</label>
+                                <textarea id="message" name="message" required placeholder="Type your message here..."></textarea>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">[Enter] Send Message</button>
+                            </div>
+                        </form>
+                        
                         <div id="form-status" class="form-status"></div>
-                    </form>
+                    </div>
                 </div>
 
-                <!-- Contact Info -->
+                <!-- Connection Info -->
                 <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <p><i class="fas fa-envelope"></i> apurvakumar.jani@gmail.com</p>
+                    <h3>// System Status &amp; Metadata</h3>
+                    
+                    <div class="contact-info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email:</strong><br>
+                            <span>apurvakumar.jani@gmail.com</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Location:</strong><br>
+                            <span>Greater Boston Area, MA</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <i class="fas fa-briefcase"></i>
+                        <div>
+                            <strong>Availability:</strong><br>
+                            <span>Senior Robotics Software Engineer @ Symbotic</span>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2rem;">
+                        <h3 style="margin-bottom: 1rem;">// Find Me Elsewhere</h3>
+                        <div class="social-links" style="justify-content: flex-start;">
+                            <a href="https://www.linkedin.com/in/apurvakumar-jani-06066778/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://scholar.google.com/citations?user=38tfKiIAAAAJ&hl=en" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                            <a href="https://github.com/janiapurv" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://medium.com/@apurvjani21" target="_blank" aria-label="Medium"><i class="fab fa-medium"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -91,21 +137,21 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Contact</h3>
-                    <p>Email: apurvakumar.jani@gmail.com</p>
+                    <h3>// Contact</h3>
+                    <p>apurvakumar.jani@gmail.com</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Follow Me</h3>
+                    <h3>// Connect</h3>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/your-linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://scholar.google.com/your-scholar" target="_blank"><i class="fas fa-graduation-cap"></i></a>
-                        <a href="https://github.com/your-github" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://medium.com/@apurvjani21" target="_blank"><i class="fab fa-medium"></i></a>
+                        <a href="https://www.linkedin.com/in/apurvakumar-jani-06066778/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://scholar.google.com/citations?user=38tfKiIAAAAJ&hl=en" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="https://github.com/janiapurv" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://medium.com/@apurvjani21" target="_blank" aria-label="Medium"><i class="fab fa-medium"></i></a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Apurvakumar Jani. All rights reserved.</p>
+                <p>&copy; 2025 Apurvakumar Jani. All rights reserved. Built with <span style="color: var(--terminal-green);">&lt;/&gt;</span> and ☕</p>
             </div>
         </div>
     </footer>
@@ -113,50 +159,16 @@
     <!-- JavaScript -->
     <script src="js/main.js"></script>
     <script>
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
+        document.addEventListener('DOMContentLoaded', () => {
+            initContactForm();
             
-            const form = this;
-            const status = document.getElementById('form-status');
-            const submitButton = form.querySelector('button[type="submit"]');
-            
-            // Disable submit button and show loading state
-            submitButton.disabled = true;
-            submitButton.textContent = 'Sending...';
-            status.textContent = '';
-            
-            // Get form data
-            const formData = new FormData(form);
-            
-            // Send form data
-            fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.ok) {
-                    status.textContent = 'Message sent successfully!';
-                    status.className = 'form-status success';
-                    form.reset();
-                } else {
-                    status.textContent = 'Failed to send message. Please try again.';
-                    status.className = 'form-status error';
-                }
-            })
-            .catch(error => {
-                status.textContent = 'An error occurred. Please try again.';
-                status.className = 'form-status error';
-            })
-            .finally(() => {
-                // Re-enable submit button
-                submitButton.disabled = false;
-                submitButton.textContent = 'Send Message';
-            });
+            // Set dynamic timestamp in SSH login header
+            const dateEl = document.getElementById('current-time');
+            if (dateEl) {
+                const now = new Date();
+                dateEl.textContent = now.toLocaleString();
+            }
         });
     </script>
 </body>
-</html> 
+</html>

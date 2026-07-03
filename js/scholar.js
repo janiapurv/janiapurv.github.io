@@ -84,11 +84,11 @@ function updatePaperCitations(paperResults) {
 // Function to fallback to static data
 function fallbackToStaticData() {
     const staticData = {
-        totalCitations: 23,
+        totalCitations: 49,
         papers: [
-            { title: "Using Physiological Measurements to Analyze the Tactical Decisions in Human Swarm Teams", citations: 12 },
-            { title: "Learning Robot Swarm Tactics over Complex Adversarial Environments", citations: 8 },
-            { title: "Interactive Shape Control of Swarm of Mobile Robots using Geographic Information System (GIS) based Shape Model", citations: 3 }
+            { title: "Using Physiological Measurements to Analyze the Tactical Decisions in Human Swarm Teams", citations: 26 },
+            { title: "Learning Robot Swarm Tactics over Complex Adversarial Environments", citations: 18 },
+            { title: "Interactive Shape Control of Swarm of Mobile Robots using Geographic Information System (GIS) based Shape Model", citations: 5 }
         ]
     };
 

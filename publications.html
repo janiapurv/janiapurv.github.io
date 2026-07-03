@@ -6,111 +6,172 @@
     <meta name="description" content="Apurvakumar Jani's Research Publications - Explore academic papers and research in robotics and control systems">
     <title>Publications | Apurvakumar Jani</title>
     
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
-    </script>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/publications.css">
     
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <a href="index.html" class="nav-brand">Apurvakumar Jani</a>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="publications.html" class="active">Publications</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <span class="nav-prompt">apurva</span><span class="nav-at">@</span><span class="nav-host">portfolio</span><span class="nav-colon">:</span><span class="nav-path">~</span><span class="nav-dollar">$</span>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">~/home</a></li>
+                <li><a href="projects.html">~/projects</a></li>
+                <li><a href="publications.html" class="active">~/publications</a></li>
+                <li><a href="blog.html">~/blog</a></li>
+                <li><a href="contact.html">~/contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
     <!-- Publications Header -->
-    <section class="publications-header">
+    <section class="page-header">
         <div class="container">
-            <h1>Research Publications</h1>
+            <h1><span class="prompt">$</span> cat ~/publications</h1>
             <p>Academic papers and research contributions in robotics and control systems</p>
         </div>
     </section>
 
     <!-- Google Scholar Stats -->
-    <section class="scholar-stats">
+    <section class="section" style="padding-bottom: 0;">
         <div class="container">
-            <h2>Research Impact</h2>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <i class="fas fa-quote-right"></i>
-                    <h3>Total Citations</h3>
-                    <p class="stat-number" id="total-citations">Loading...</p>
+            <div class="scholar-stats-panel fade-in">
+                <div class="stats-header">apurva@scholar</div>
+                <div style="color: var(--text-dim); margin-bottom: 1rem;">────────────────</div>
+                
+                <div class="stats-row">
+                    <span class="stats-label">Citations:</span>
+                    <span class="stats-value" id="total-citations">49</span>
+                    <div class="stats-bar">
+                        <span class="filled"></span>
+                        <span class="filled"></span>
+                        <span class="filled"></span>
+                        <span class="filled"></span>
+                        <span class="filled"></span>
+                        <span class="filled"></span>
+                        <span class="filled"></span>
+                        <span class="filled"></span>
+                        <span class="filled"></span>
+                        <span class="empty"></span>
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <i class="fas fa-file-alt"></i>
-                    <h3>Publications</h3>
-                    <p class="stat-number">3</p>
+
+                <div class="stats-row">
+                    <span class="stats-label">Publications:</span>
+                    <span class="stats-value">3</span>
+                    <div class="stats-bar">
+                        <span class="filled"></span>
+                        <span class="filled"></span>
+                        <span class="filled"></span>
+                        <span class="empty"></span>
+                        <span class="empty"></span>
+                        <span class="empty"></span>
+                        <span class="empty"></span>
+                        <span class="empty"></span>
+                        <span class="empty"></span>
+                        <span class="empty"></span>
+                    </div>
+                </div>
+
+                <div class="stats-row">
+                    <span class="stats-label">h-index:</span>
+                    <span class="stats-value">3</span>
+                    <div class="stats-bar">
+                        <span class="filled"></span>
+                        <span class="filled"></span>
+                        <span class="filled"></span>
+                        <span class="empty"></span>
+                        <span class="empty"></span>
+                        <span class="empty"></span>
+                        <span class="empty"></span>
+                        <span class="empty"></span>
+                        <span class="empty"></span>
+                        <span class="empty"></span>
+                    </div>
+                </div>
+
+                <div class="stats-row">
+                    <span class="stats-label">i10-index:</span>
+                    <span class="stats-value">2</span>
+                    <div class="stats-bar">
+                        <span class="filled"></span>
+                        <span class="filled"></span>
+                        <span class="empty"></span>
+                        <span class="empty"></span>
+                        <span class="empty"></span>
+                        <span class="empty"></span>
+                        <span class="empty"></span>
+                        <span class="empty"></span>
+                        <span class="empty"></span>
+                        <span class="empty"></span>
+                    </div>
+                </div>
+
+                <div class="stats-row" style="margin-top: 0.5rem;">
+                    <span class="stats-label">Uptime:</span>
+                    <span class="stats-value" style="color: var(--terminal-amber);">8 years in research & dev</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Publications List -->
-    <section class="publications-list">
+    <section class="section">
         <div class="container">
-            <div class="publication-item">
-                <div class="publication-content">
-                    <h3>Using Physiological Measurements to Analyze the Tactical Decisions in Human Swarm Teams</h3>
-                    <p class="authors">Hemanth Manjunatha, Joseph Distefano, Apurv Jani, Ehsan Esfahani, Souma Chowdhury, Payam Ghassemi</p>
-                    <p class="venue">IEEE SMC (Systems, Man, and Cybernetics) - 2020</p>
-                    <div class="publication-meta">
-                        <span class="citations"><i class="fas fa-quote-right"></i> <span class="citation-count">Loading...</span> citations</span>
-                    </div>
-                    <div class="publication-links">
-                        <a href="https://scholar.google.com/citations?user=38tfKiIAAAAJ&hl=en" class="btn" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
-                        <a href="https://www.semanticscholar.org/paper/Using-Physiological-Measurements-to-Analyze-the-in-Manjunatha-Distefano/10.1109/SMC42975.2020.9283508" class="btn" target="_blank"><i class="fas fa-book"></i> Semantic Scholar</a>
-                    </div>
+            <!-- Pub 1 -->
+            <div class="publication-item fade-in">
+                <div class="pub-label">IEEE SMC 2020</div>
+                <h3>Using Physiological Measurements to Analyze the Tactical Decisions in Human Swarm Teams</h3>
+                <p class="pub-authors">Hemanth Manjunatha, Joseph Distefano, Apurv Jani, Ehsan Esfahani, Souma Chowdhury, Payam Ghassemi</p>
+                <p class="pub-venue">IEEE International Conference on Systems, Man, and Cybernetics (SMC) — 2020</p>
+                <div class="pub-meta">
+                    <span class="pub-citations"><i class="fas fa-quote-right"></i> <span class="citation-count">26</span> citations</span>
+                </div>
+                <div class="pub-links">
+                    <a href="https://scholar.google.com/citations?user=38tfKiIAAAAJ&hl=en" class="btn" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+                    <a href="https://www.semanticscholar.org/paper/Using-Physiological-Measurements-to-Analyze-the-in-Manjunatha-Distefano/10.1109/SMC42975.2020.9283508" class="btn" target="_blank"><i class="fas fa-book"></i> Semantic Scholar</a>
                 </div>
             </div>
 
-            <div class="publication-item">
-                <div class="publication-content">
-                    <h3>Learning Robot Swarm Tactics over Complex Adversarial Environments</h3>
-                    <p class="authors">Amir Behjat, Hemanth Manjunatha, Prajit KrisshnaKumar, Apurv Jani, Leighton Collins, Payam Ghassemi, Joseph Distefano</p>
-                    <p class="venue">IEEE MRS (Multi-Robot and Multi-Agent System) 2021</p>
-                    <div class="publication-meta">
-                        <span class="citations"><i class="fas fa-quote-right"></i> <span class="citation-count">Loading...</span> citations</span>
-                    </div>
-                    <div class="publication-links">
-                        <a href="https://scholar.google.com/citations?user=38tfKiIAAAAJ&hl=en" class="btn" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
-                        <a href="https://www.semanticscholar.org/paper/Learning-Robot-Swarm-Tactics-over-Complex-Behojat-Manjunatha/10.1109/MRS50823.2021.9620523" class="btn" target="_blank"><i class="fas fa-book"></i> Semantic Scholar</a>
-                    </div>
+            <!-- Pub 2 -->
+            <div class="publication-item fade-in">
+                <div class="pub-label">IEEE MRS 2021</div>
+                <h3>Learning Robot Swarm Tactics over Complex Adversarial Environments</h3>
+                <p class="pub-authors">Amir Behjat, Hemanth Manjunatha, Prajit KrisshnaKumar, Apurv Jani, Leighton Collins, Payam Ghassemi, Joseph Distefano</p>
+                <p class="pub-venue">IEEE International Symposium on Multi-Robot and Multi-Agent Systems (MRS) — 2021</p>
+                <div class="pub-meta">
+                    <span class="pub-citations"><i class="fas fa-quote-right"></i> <span class="citation-count">18</span> citations</span>
+                </div>
+                <div class="pub-links">
+                    <a href="https://scholar.google.com/citations?user=38tfKiIAAAAJ&hl=en" class="btn" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+                    <a href="https://www.semanticscholar.org/paper/Learning-Robot-Swarm-Tactics-over-Complex-Behojat-Manjunatha/10.1109/MRS50823.2021.9620523" class="btn" target="_blank"><i class="fas fa-book"></i> Semantic Scholar</a>
                 </div>
             </div>
 
-            <div class="publication-item">
-                <div class="publication-content">
-                    <h3>Interactive Shape Control of Swarm of Mobile Robots using Geographic Information System (GIS) based Shape Model</h3>
-                    <p class="authors">Apurv Jani</p>
-                    <p class="venue">Master's Thesis, University at Buffalo, SUNY, 2020</p>
-                    <div class="publication-meta">
-                        <span class="citations"><i class="fas fa-quote-right"></i> <span class="citation-count">Loading...</span> citations</span>
-                    </div>
-                    <div class="publication-links">
-                        <a href="https://scholar.google.com/citations?user=38tfKiIAAAAJ&hl=en" class="btn" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
-                    </div>
+            <!-- Pub 3 -->
+            <div class="publication-item fade-in">
+                <div class="pub-label">Master's Thesis 2020</div>
+                <h3>Interactive Shape Control of Swarm of Mobile Robots using Geographic Information System (GIS) based Shape Model</h3>
+                <p class="pub-authors">Apurv Jani</p>
+                <p class="pub-venue">Master's Thesis, University at Buffalo, SUNY — 2020</p>
+                <div class="pub-meta">
+                    <span class="pub-citations"><i class="fas fa-quote-right"></i> <span class="citation-count">5</span> citations</span>
+                </div>
+                <div class="pub-links">
+                    <a href="https://scholar.google.com/citations?user=38tfKiIAAAAJ&hl=en" class="btn" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
                 </div>
             </div>
         </div>
@@ -121,20 +182,21 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Contact</h3>
-                    <p>Email: apurvakumar.jani@gmail.com</p>
+                    <h3>// Contact</h3>
+                    <p>apurvakumar.jani@gmail.com</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Follow Me</h3>
+                    <h3>// Connect</h3>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/apurvakumar-jani-06066778/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://scholar.google.com/citations?user=38tfKiIAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i></a>
-                        <a href="https://github.com/janiapurv" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/apurvakumar-jani-06066778/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://scholar.google.com/citations?user=38tfKiIAAAAJ&hl=en" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="https://github.com/janiapurv" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://medium.com/@apurvjani21" target="_blank" aria-label="Medium"><i class="fab fa-medium"></i></a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Apurvakumar Jani. All rights reserved.</p>
+                <p>&copy; 2025 Apurvakumar Jani. All rights reserved. Built with <span style="color: var(--terminal-green);">&lt;/&gt;</span> and ☕</p>
             </div>
         </div>
     </footer>
@@ -143,4 +205,4 @@
     <script src="js/main.js"></script>
     <script src="js/scholar.js"></script>
 </body>
-</html> 
+</html>

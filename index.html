@@ -3,103 +3,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Apurvakumar Jani - Robotics Researcher and Software Engineer specializing in Robotics Control, ROS2, and AI">
-    <meta name="keywords" content="Apurvakumar Jani, Robotics, Control Systems, ROS2, AI, Machine Learning, Research">
-    <title>Apurvakumar Jani | Robotics Researcher & Software Engineer</title>
-    
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
-    </script>
+    <meta name="description" content="Apurvakumar Jani — Senior Robotics Software Engineer @ Symbotic. Specialist in driving controls, state estimation, ROS2, and fleet navigation.">
+    <meta name="keywords" content="Apurvakumar Jani, Senior Robotics Software Engineer, Symbotic, Mechatronics, Controls, ROS2, State Estimation, Motion Planning, Behavior Trees">
+    <title>Apurvakumar Jani | Senior Robotics Software Engineer</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
-    
+
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Boot Sequence Overlay -->
+    <div id="boot-overlay" class="boot-overlay">
+        <div class="boot-terminal">
+            <div class="boot-line"><span class="ok-tag">[  OK  ]</span> Starting portfolio.service...</div>
+            <div class="boot-line"><span class="ok-tag">[  OK  ]</span> Loading modules: driving-controls, motion-planning, state-estimation</div>
+            <div class="boot-line"><span class="ok-tag">[  OK  ]</span> Mounting /dev/symbotic-fleet (1,000+ robots online)...</div>
+            <div class="boot-line"><span class="ok-tag">[  OK  ]</span> Initializing Behavior Tree control nodes...</div>
+            <div class="boot-line"><span class="ok-tag">[  OK  ]</span> All systems operational.</div>
+            <div class="boot-line boot-prompt">root@apurva:~$ ./welcome.sh <span class="boot-cursor"></span></div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-brand">Apurvakumar Jani</div>
-        <ul class="nav-links">
-            <li><a href="#home" class="active">Home</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="publications.html">Publications</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <span class="nav-prompt">apurva</span><span class="nav-at">@</span><span class="nav-host">portfolio</span><span class="nav-colon">:</span><span class="nav-path">~</span><span class="nav-dollar">$</span>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" class="active">~/home</a></li>
+                <li><a href="resume.html">~/resume</a></li>
+                <li><a href="projects.html">~/projects</a></li>
+                <li><a href="publications.html">~/publications</a></li>
+                <li><a href="blog.html">~/blog</a></li>
+                <li><a href="contact.html">~/contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="profile-image">
-                <img src="./images/linkedIn_image.jpg" alt="Apurvakumar Jani" id="profile-img">
-            </div>
-            <div class="hero-text">
-                <h1>Apurvakumar Jani</h1>
-                <h2>Robotics Researcher & Software Engineer</h2>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/apurvakumar-jani-06066778" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://scholar.google.com/citations?user=38tfKiIAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i></a>
-                    <a href="https://github.com/janiapurv" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://medium.com/@apurvjani21" target="_blank"><i class="fab fa-medium"></i></a>
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-image-wrapper">
+                    <img src="images/linkedIn_image.jpg" alt="Apurvakumar Jani" class="hero-image">
+                </div>
+                <div class="hero-content">
+                    <div class="hero-terminal-line">
+                        <span class="prompt-symbol">$</span>
+                        <h1 class="hero-name">Apurvakumar Jani</h1>
+                    </div>
+                    <p class="hero-title">Senior Robotics Software Engineer @ Symbotic</p>
+                    <p class="hero-subtitle">Architecting autonomous driving controls, state estimators, and motion planners for 1,000+ warehouse robots.</p>
+                    <div class="hero-actions">
+                        <a href="resume.html" class="btn btn-primary"><i class="fas fa-file-invoice"></i> View Resume</a>
+                        <a href="projects.html" class="btn btn-amber"><i class="fas fa-robot"></i> Projects</a>
+                    </div>
+                    <div class="social-links" style="margin-top: 1.5rem;">
+                        <a href="https://www.linkedin.com/in/apurvakumar-jani-06066778" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://scholar.google.com/citations?user=38tfKiIAAAAJ&hl=en" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="https://github.com/janiapurv" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://medium.com/@apurvjani21" target="_blank" aria-label="Medium"><i class="fab fa-medium"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Summary Section -->
-    <section id="summary" class="summary">
+    <!-- Neofetch About Section -->
+    <section class="section" id="about">
         <div class="container">
-            <h2>About Me</h2>
-            <p>Self-driven roboticist with 8+ years of experience in Robotics and software Design. Passionate about making an impact in robotics through innovative solutions and research.</p>
-            <div class="skills">
-                <h3>Key Skills</h3>
-                <div class="skill-tags">
-                    <span>Robotics Control</span>
-                    <span>ROS2</span>
-                    <span>C++</span>
-                    <span>Python</span>
-                    <span>Machine Learning</span>
-                    <span>AI</span>
-                    <span>Linux</span>
-                    <span>MATLAB</span>
+            <h2 class="section-title fade-in"><span class="prompt">$</span> neofetch</h2>
+            <div class="neofetch-box fade-in">
+                <div class="neofetch-grid">
+                    <div class="neofetch-ascii">
+     _____
+    /     \
+   | () () |
+   |  ___  |
+   |_|   |_|
+    /|   |\
+   /_|   |_\
+     |___|
+     /   \
+    /     \</div>
+                    <div class="neofetch-info">
+                        <div class="neofetch-header">apurva@symbotic-fleet</div>
+                        <div class="neofetch-separator">────────────────────</div>
+                        <div class="info-line"><span class="info-label">OS:</span> <span class="info-value">Ubuntu 22.04 LTS (Jammy)</span></div>
+                        <div class="info-line"><span class="info-label">Role:</span> <span class="info-value">Senior Robotics Software Engineer</span></div>
+                        <div class="info-line"><span class="info-label">Shell:</span> <span class="info-value">C++, Python, Bash, MATLAB</span></div>
+                        <div class="info-line"><span class="info-label">DE:</span> <span class="info-value">ROS2 + Gazebo</span></div>
+                        <div class="info-line"><span class="info-label">Uptime:</span> <span class="info-value">8+ years in robotics engineering</span></div>
+                        <div class="info-line"><span class="info-label">Packages:</span> <span class="info-value">Behavior Trees, Kalman Filters, Particle Filters, CANopen, LiDAR</span></div>
+                        <div class="info-line"><span class="info-label">Education:</span> <span class="info-value">MS in Mechatronics & Control, UB (GPA 3.9)</span></div>
+                        <div class="info-line"><span class="info-label">Core Target:</span> <span class="info-value">1,000+ autonomous warehouse robots</span></div>
+                        <div class="neofetch-colors">
+                            <span style="background: var(--terminal-green);"></span>
+                            <span style="background: var(--accent-cyan);"></span>
+                            <span style="background: var(--terminal-amber);"></span>
+                            <span style="background: var(--accent-red);"></span>
+                            <span style="background: #a855f7;"></span>
+                            <span style="background: #3b82f6;"></span>
+                            <span style="background: #ec4899;"></span>
+                            <span style="background: var(--text-primary);"></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Publications Preview -->
-    <section id="publications-preview" class="publications">
+    <!-- Skills Section -->
+    <section class="section" id="skills">
         <div class="container">
-            <h2>Recent Publications</h2>
-            <div class="publication-grid">
-                <div class="publication-card">
-                    <h3>Using Physiological Measurements to Analyze the Tactical Decisions in Human Swarm Teams</h3>
-                    <p>IEEE SMC (Systems, Man, and Cybernetics) - 2020</p>
-                    <a href="https://scholar.google.com/citations?user=38tfKiIAAAAJ&hl=en" class="btn" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+            <h2 class="section-title fade-in"><span class="prompt">$</span> apt list --installed</h2>
+            <div class="skills-grid">
+                <div class="skill-category fade-in stagger-1">
+                    <h3><i class="fas fa-robot"></i> Driving Controls & Planning</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Driving Control Algorithms</span>
+                        <span class="skill-tag">Motion Planning</span>
+                        <span class="skill-tag">Trajectory Generation</span>
+                        <span class="skill-tag">Behavior Trees</span>
+                        <span class="skill-tag">ROS / ROS2</span>
+                        <span class="skill-tag">Gazebo Simulation</span>
+                    </div>
                 </div>
-                <div class="publication-card">
-                    <h3>Learning Robot Swarm Tactics over Complex Adversarial Environments</h3>
-                    <p>IEEE MRS (Multi-Robot and Multi-Agent System) 2021</p>
+                <div class="skill-category fade-in stagger-2">
+                    <h3><i class="fas fa-filter"></i> Estimation & Protocols</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Kalman Filters</span>
+                        <span class="skill-tag">Particle Filters</span>
+                        <span class="skill-tag">State Estimation</span>
+                        <span class="skill-tag">CAN / CANopen</span>
+                        <span class="skill-tag">LiDAR Collision Avoidance</span>
+                        <span class="skill-tag">Sensors Integration</span>
+                    </div>
+                </div>
+                <div class="skill-category fade-in stagger-3">
+                    <h3><i class="fas fa-code"></i> Engineering Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">MATLAB / Simulink</span>
+                        <span class="skill-tag">LabVIEW</span>
+                        <span class="skill-tag">Linux / Shell</span>
+                        <span class="skill-tag">PLC Siemens</span>
+                    </div>
+                </div>
+                <div class="skill-category fade-in stagger-4">
+                    <h3><i class="fas fa-tasks"></i> Methodology & Architecture</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Microservices Abstraction</span>
+                        <span class="skill-tag">Software-Defined Robots</span>
+                        <span class="skill-tag">Scrum Master (PSM1)</span>
+                        <span class="skill-tag">Root Cause Analysis</span>
+                        <span class="skill-tag">Mechatronics R&D</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Publications -->
+    <section class="section" id="publications-preview">
+        <div class="container">
+            <h2 class="section-title fade-in"><span class="prompt">&gt;</span> Recent Publications</h2>
+            <div class="publication-item fade-in">
+                <div class="pub-label">IEEE SMC 2020</div>
+                <h3>Using Physiological Measurements to Analyze the Tactical Decisions in Human Swarm Teams</h3>
+                <p class="pub-venue">IEEE Systems, Man, and Cybernetics</p>
+                <div class="pub-links">
                     <a href="https://scholar.google.com/citations?user=38tfKiIAAAAJ&hl=en" class="btn" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
                 </div>
             </div>
-            <a href="publications.html" class="view-all">View All Publications</a>
+            <div class="publication-item fade-in">
+                <div class="pub-label">IEEE MRS 2021</div>
+                <h3>Learning Robot Swarm Tactics over Complex Adversarial Environments</h3>
+                <p class="pub-venue">IEEE Multi-Robot and Multi-Agent System</p>
+                <div class="pub-links">
+                    <a href="https://scholar.google.com/citations?user=38tfKiIAAAAJ&hl=en" class="btn" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="publications.html" class="btn btn-amber"><i class="fas fa-arrow-right"></i> View All Publications</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Git Log Timeline -->
+    <section class="section" id="timeline">
+        <div class="container">
+            <h2 class="section-title fade-in"><span class="prompt">$</span> git log --oneline</h2>
+            <div class="timeline fade-in">
+                <div class="timeline-item">
+                    <div class="timeline-hash">e7a8b9c</div>
+                    <div class="timeline-date">Jun 2025 – Present</div>
+                    <div class="timeline-title">Senior Robotics Software Engineer @ Symbotic</div>
+                    <div class="timeline-desc">Owning end-to-end driving control and LiDAR collision detection architecture across 1,000+ robots.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-hash">b6d5c4b</div>
+                    <div class="timeline-date">Oct 2021 – Jun 2025</div>
+                    <div class="timeline-title">Advanced Software Engineer — Robotics Controls @ Symbotic</div>
+                    <div class="timeline-desc">Developed control software (C++/ROS2), built configurable microservices, halved downtime.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-hash">a2f3d4e</div>
+                    <div class="timeline-date">Mar 2021 – Oct 2021</div>
+                    <div class="timeline-title">Robotics Test Engineer @ Symbotic</div>
+                    <div class="timeline-desc">Wrote test setups in C++/Python, ran simulations in Gazebo.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-hash">9c8b7a6</div>
+                    <div class="timeline-date">Dec 2018 – Mar 2021</div>
+                    <div class="timeline-title">Robotics Researcher @ HILS Lab, UB</div>
+                    <div class="timeline-desc">DARPA OFFSET multi-robot controls, PyBullet environments, designed variable stiffness gripper.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-hash">1a2b3c4</div>
+                    <div class="timeline-date">Jul 2016 – Jul 2018</div>
+                    <div class="timeline-title">Design R&D Engineer @ TATA Technologies</div>
+                    <div class="timeline-desc">Siemens PLC ladder logic systems, component integration testing.</div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -108,21 +246,21 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Contact</h3>
-                    <p>Email: apurvakumar.jani@gmail.com</p>
+                    <h3>// Contact</h3>
+                    <p>apurvakumar.jani@gmail.com</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Follow Me</h3>
+                    <h3>// Connect</h3>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/apurvakumar-jani-06066778/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://scholar.google.com/citations?user=38tfKiIAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i></a>
-                        <a href="https://github.com/janiapurv" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://medium.com/@apurvjani21" target="_blank"><i class="fab fa-medium"></i></a>
+                        <a href="https://www.linkedin.com/in/apurvakumar-jani-06066778/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://scholar.google.com/citations?user=38tfKiIAAAAJ&hl=en" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="https://github.com/janiapurv" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://medium.com/@apurvjani21" target="_blank" aria-label="Medium"><i class="fab fa-medium"></i></a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Apurvakumar Jani. All rights reserved.</p>
+                <p>&copy; 2025 Apurvakumar Jani. All rights reserved. Built with <span style="color: var(--terminal-green);">&lt;/&gt;</span> and ☕</p>
             </div>
         </div>
     </footer>
@@ -130,4 +268,4 @@
     <!-- JavaScript -->
     <script src="js/main.js"></script>
 </body>
-</html> 
+</html>

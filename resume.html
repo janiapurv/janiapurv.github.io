@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apurvakumar Jani's Professional Resume - Senior Robotics Software Engineer specializing in driving controls, state estimation, and fleet systems">
+    <title>Resume | Apurvakumar Jani</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .resume-container {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: var(--space-2xl);
+            margin-bottom: var(--space-xl);
+            position: relative;
+        }
+        .resume-container::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 3px;
+            background: linear-gradient(90deg, var(--terminal-green), var(--terminal-amber));
+        }
+        .resume-header {
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: var(--space-xl);
+            margin-bottom: var(--space-xl);
+        }
+        .resume-header h2 {
+            font-size: 2.2rem;
+            color: var(--text-primary);
+            margin-bottom: var(--space-xs);
+        }
+        .resume-contact {
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            display: flex;
+            justify-content: center;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+            margin-top: var(--space-sm);
+        }
+        .resume-contact a {
+            color: var(--terminal-green);
+        }
+        .resume-section {
+            margin-bottom: var(--space-xl);
+        }
+        .resume-section-title {
+            font-family: var(--font-mono);
+            font-size: 1.15rem;
+            color: var(--terminal-green);
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: var(--space-xs);
+            margin-bottom: var(--space-md);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .job {
+            margin-bottom: var(--space-lg);
+        }
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: var(--space-xs);
+        }
+        .job-title {
+            font-family: var(--font-mono);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .job-company {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            color: var(--terminal-amber);
+        }
+        .job-date {
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+        .job-bullets {
+            padding-left: var(--space-xl);
+            margin-top: var(--space-xs);
+        }
+        .job-bullets li {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            margin-bottom: var(--space-xs);
+            line-height: 1.6;
+        }
+        .resume-skills-grid {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: var(--space-md);
+            margin-bottom: var(--space-sm);
+            font-size: 0.92rem;
+        }
+        .resume-skills-label {
+            font-family: var(--font-mono);
+            color: var(--terminal-amber);
+            font-weight: 600;
+        }
+        .resume-skills-val {
+            color: var(--text-secondary);
+        }
+        @media (max-width: 768px) {
+            .job-header {
+                flex-direction: column;
+                gap: 2px;
+            }
+            .resume-skills-grid {
+                grid-template-columns: 1fr;
+                gap: 2px;
+                margin-bottom: var(--space-md);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <span class="nav-prompt">apurva</span><span class="nav-at">@</span><span class="nav-host">portfolio</span><span class="nav-colon">:</span><span class="nav-path">~</span><span class="nav-dollar">$</span>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">~/home</a></li>
+                <li><a href="resume.html" class="active">~/resume</a></li>
+                <li><a href="projects.html">~/projects</a></li>
+                <li><a href="publications.html">~/publications</a></li>
+                <li><a href="blog.html">~/blog</a></li>
+                <li><a href="contact.html">~/contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1><span class="prompt">$</span> bat ~/resume.md</h1>
+            <p>Professional experience, mechatronics domain expertise, and core competencies</p>
+        </div>
+    </section>
+
+    <!-- Resume Content -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div style="text-align: right; margin-bottom: var(--space-md);">
+                <button onclick="window.print()" class="btn"><i class="fas fa-print"></i> Print PDF</button>
+            </div>
+            
+            <div class="resume-container fade-in">
+                <!-- Header -->
+                <div class="resume-header">
+                    <h2>APURVAKUMAR JANI</h2>
+                    <div class="resume-contact">
+                        <span><i class="fas fa-envelope"></i> apurvakumar.jani@gmail.com</span>
+                        <span><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/apurvakumar-jani-06066778" target="_blank">LinkedIn</a></span>
+                        <span><i class="fas fa-graduation-cap"></i> <a href="https://scholar.google.com/citations?user=38tfKiIAAAAJ" target="_blank">Google Scholar</a></span>
+                    </div>
+                </div>
+
+                <!-- Summary -->
+                <div class="resume-section">
+                    <div class="resume-section-title">// Professional Summary</div>
+                    <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7;">
+                        Senior Robotics Software Engineer with 8+ years of experience designing and deploying autonomous control systems at scale. Led end-to-end architecture of LiDAR-based collision avoidance, driving control, and motion planning pipelines across a fleet of <strong>1,000+ warehouse robots</strong>.
+                    </p>
+                </div>
+
+                <!-- Experience -->
+                <div class="resume-section">
+                    <div class="resume-section-title">// Professional Experience</div>
+                    
+                    <!-- Job 1 -->
+                    <div class="job">
+                        <div class="job-header">
+                            <span class="job-title">Senior Robotics Software Engineer</span>
+                            <span class="job-date">Jun 2025 – Present</span>
+                        </div>
+                        <div style="margin-bottom: var(--space-xs);"><span class="job-company">Symbotic</span> — Greater Boston, MA</div>
+                        <ul class="job-bullets">
+                            <li>Owned end-to-end driving control architecture from algorithm design through production deployment across a fleet of <strong>1,000+ robots</strong> operating in structured warehouse environments.</li>
+                            <li>Architected <strong>motion planning</strong> and <strong>trajectory generation pipeline</strong>, enabling smooth, collision-aware navigation at scale.</li>
+                            <li>Led design and deployment of <strong>LiDAR-based collision detection</strong> architecture, reducing collision incidents by <strong>20%</strong> and improving site-wide operational safety.</li>
+                            <li>Implemented and tuned <strong>Kalman Filter</strong> and <strong>Particle Filter</strong> based state estimation pipelines, improving robot localization accuracy in dynamic warehouse environments.</li>
+                            <li>Developed and integrated <strong>Behavior Tree</strong> based control architecture, enabling modular, scalable, and fault-tolerant robot decision-making across diverse operational scenarios.</li>
+                            <li>Led design of <strong>software-defined robot architecture</strong>, decoupling hardware-specific logic from core control software to enable scalable deployment across robot variants.</li>
+                            <li>Collaborated with routing and hardware teams to optimize path planning and trajectory generation, improving fleet throughput and reducing motion conflicts.</li>
+                            <li>Mentored <strong>3 interns</strong> on driving control and state estimator projects, guiding them from onboarding through implementation and code review.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Job 2 -->
+                    <div class="job">
+                        <div class="job-header">
+                            <span class="job-title">Advanced Software Engineer — Robotics Controls</span>
+                            <span class="job-date">Oct 2021 – Jun 2025</span>
+                        </div>
+                        <div style="margin-bottom: var(--space-xs);"><span class="job-company">Symbotic</span> — Greater Boston, MA</div>
+                        <ul class="job-bullets">
+                            <li>Developed core control software for autonomous robots using <strong>C++</strong> and <strong>ROS2</strong>.</li>
+                            <li>Reduced robot downtime by <strong>50%</strong> through root cause analysis of estimation errors and redesign of state estimation and fault recovery pipelines.</li>
+                            <li>Developed and validated advanced <strong>driving control algorithms</strong> adaptable across a fleet of heterogeneous robots, improving cross-platform motion consistency.</li>
+                            <li>Improved per-robot software scalability by abstracting robot capabilities into <strong>configurable microservices</strong>, reducing integration effort across new robot configurations.</li>
+                            <li>Diagnosed and fixed critical <strong>CANopen (Controller Area Network)</strong> related issues which contributed to high downtime of robot.</li>
+                            <li>Served as <strong>Scrum Master</strong> for controls team, facilitating sprint planning and cross-team coordination.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Job 3 -->
+                    <div class="job">
+                        <div class="job-header">
+                            <span class="job-title">Robotics Test Engineer</span>
+                            <span class="job-date">Mar 2021 – Oct 2021</span>
+                        </div>
+                        <div style="margin-bottom: var(--space-xs);"><span class="job-company">Symbotic</span> — Greater Boston, MA</div>
+                        <ul class="job-bullets">
+                            <li>Developed and improved test setup and scripts written in <strong>C++</strong> and <strong>Python</strong>.</li>
+                            <li>Troubleshot and tested control and software changes on robots.</li>
+                            <li>Developed simulation modules and executables for the <strong>Gazebo</strong> simulation platform.</li>
+                            <li>Bridged communication gap between Hardware and Software teams for robot development.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Job 4 -->
+                    <div class="job">
+                        <div class="job-header">
+                            <span class="job-title">Robotics Researcher</span>
+                            <span class="job-date">Dec 2018 – Mar 2021</span>
+                        </div>
+                        <div style="margin-bottom: var(--space-xs);"><span class="job-company">HILS Lab, University at Buffalo</span> — Buffalo, NY</div>
+                        <ul class="job-bullets">
+                            <li>Part of <strong>DARPA OFFSET</strong> project; developed and implemented robust <strong>multi-robot formation control</strong> algorithms.</li>
+                            <li>Contributed as developer in <strong>PyBullet</strong>-based low fidelity swarm learning environment to teach AI to swarm of UAVs and UGVs with human-in-the-loop interfaces.</li>
+                            <li>Developed robotics control framework using <strong>ROS, Python and C++</strong> for robotic arm.</li>
+                            <li>Designed a modular version of a variable stiffness magnetic gripper (patented by HILS Lab); implemented real-time stiffness control via Touch display HMI integrated with <strong>Raspberry Pi</strong>.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Job 5 -->
+                    <div class="job">
+                        <div class="job-header">
+                            <span class="job-title">Design R&D Engineer</span>
+                            <span class="job-date">Jul 2016 – Jul 2018</span>
+                        </div>
+                        <div style="margin-bottom: var(--space-xs);"><span class="job-company">TATA Technologies</span> — Pune, India</div>
+                        <ul class="job-bullets">
+                            <li>Worked onsite at TATA Motors plant to identify and troubleshoot issues arising during production of new vehicles.</li>
+                            <li>Provided technical support in developing ladder logic and HMI for <strong>Siemens PLC</strong> systems.</li>
+                            <li>Carried out validation tests for integration of electro-mechanical components on the production line.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="resume-section">
+                    <div class="resume-section-title">// Education</div>
+                    <div class="job">
+                        <div class="job-header">
+                            <strong style="color: var(--text-primary);">Master of Science (Thesis) in Mechatronics and Control</strong>
+                            <span class="job-date">Sep 2020</span>
+                        </div>
+                        <div style="color: var(--terminal-amber);">University at Buffalo, SUNY | GPA: 3.9</div>
+                        <div style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 4px;">
+                            Coursework: Mechatronics, Advanced Control Systems, Manufacturing Automation, Continuous Control Systems, System Analysis, Design and Optimization, Heuristic Optimization, Human-Robot Interaction.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <div class="resume-section">
+                    <div class="resume-section-title">// Core Competencies &amp; Technical Skills</div>
+                    
+                    <div class="resume-skills-grid">
+                        <div class="resume-skills-label">Languages:</div>
+                        <div class="resume-skills-val">Python, C++, C#, Java, SQL, MATLAB, Simulink, LabVIEW, PLC Ladder</div>
+                    </div>
+                    <div class="resume-skills-grid">
+                        <div class="resume-skills-label">Frameworks:</div>
+                        <div class="resume-skills-val">ROS2, ROS, Gazebo, PyBullet, MAVROS, OpenCV</div>
+                    </div>
+                    <div class="resume-skills-grid">
+                        <div class="resume-skills-label">Protocols:</div>
+                        <div class="resume-skills-val">CANopen, CAN, I2C, UART, SPI, Modbus</div>
+                    </div>
+                    <div class="resume-skills-grid">
+                        <div class="resume-skills-label">Domains:</div>
+                        <div class="resume-skills-val">Control Systems, Motion Planning, State Estimation (Kalman/Particle Filters), Behavior Trees, Mechatronics Design, Optimization, Scrum/Agile</div>
+                    </div>
+                </div>
+
+                <!-- Certification -->
+                <div class="resume-section" style="margin-bottom: 0;">
+                    <div class="resume-section-title">// Certifications</div>
+                    <p style="font-size: 0.92rem; color: var(--text-secondary);">
+                        <strong style="color: var(--text-primary);">Certified Scrum Master (PSM1)</strong> — Scrum.org
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>// Contact</h3>
+                    <p>apurvakumar.jani@gmail.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>// Connect</h3>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/apurvakumar-jani-06066778/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://scholar.google.com/citations?user=38tfKiIAAAAJ&hl=en" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="https://github.com/janiapurv" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://medium.com/@apurvjani21" target="_blank" aria-label="Medium"><i class="fab fa-medium"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Apurvakumar Jani. All rights reserved. Built with <span style="color: var(--terminal-green);">&lt;/&gt;</span> and ☕</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

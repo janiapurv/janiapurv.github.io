@@ -6,103 +6,102 @@
     <meta name="description" content="Apurvakumar Jani's Blog - Insights on robotics, control systems, and technology">
     <title>Blog | Apurvakumar Jani</title>
     
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
-    </script>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/blog.css">
     
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <a href="index.html" class="nav-brand">Apurvakumar Jani</a>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="publications.html">Publications</a></li>
-            <li><a href="blog.html" class="active">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <span class="nav-prompt">apurva</span><span class="nav-at">@</span><span class="nav-host">portfolio</span><span class="nav-colon">:</span><span class="nav-path">~</span><span class="nav-dollar">$</span>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">~/home</a></li>
+                <li><a href="projects.html">~/projects</a></li>
+                <li><a href="publications.html">~/publications</a></li>
+                <li><a href="blog.html" class="active">~/blog</a></li>
+                <li><a href="contact.html">~/contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
     <!-- Blog Header -->
-    <section class="blog-header">
+    <section class="page-header">
         <div class="container">
-            <h1>Blog</h1>
-            <p>Insights on robotics, control systems, and technology</p>
+            <h1><span class="prompt">$</span> ls ~/blog</h1>
+            <p>Insights on robotics, control systems, and machine learning</p>
         </div>
     </section>
 
     <!-- Blog Posts -->
-    <section class="blog-posts">
+    <section class="section">
         <div class="container">
-            <div class="post-grid">
-                <!-- Large Language Models Crash Course -->
-                <article class="post-card">
-                    <div class="post-content">
-                        <h2>A 5-Minute Crash Course on Large Language Models (LLMs)</h2>
-                        <div class="post-meta">
-                            <span><i class="fas fa-calendar"></i> December 2024</span>
-                            <span><i class="fas fa-clock"></i> 5 min read</span>
-                            <a href="https://medium.com/@apurvjani21/a-5-minute-crash-course-on-large-language-models-llms-26992bdf6813" target="_blank" style="text-decoration:none;color:inherit;">
-                                <i class="fas fa-external-link-alt"></i> Medium
-                            </a>
-                        </div>
-                        <p>Get a quick overview of Large Language Models (LLMs) - what they are, how they work, and their applications in today's AI landscape. Perfect for anyone looking to understand the basics of this transformative technology.</p>
-                        <div class="post-tags">
-                            <span class="tag">AI</span>
-                            <span class="tag">Machine Learning</span>
-                            <span class="tag">LLMs</span>
-                            <span class="tag">Technology</span>
-                        </div>
-                        <a href="https://medium.com/@apurvjani21/a-5-minute-crash-course-on-large-language-models-llms-26992bdf6813" target="_blank" class="btn">Read on Medium</a>
+            <div class="blog-grid">
+                <!-- Post 1 -->
+                <article class="blog-card fade-in">
+                    <div class="blog-card-file">
+                        <i class="far fa-file-code"></i> llm-crash-course.md
                     </div>
+                    <h3>A 5-Minute Crash Course on Large Language Models (LLMs)</h3>
+                    <div class="blog-card-meta">
+                        <span><i class="fas fa-calendar"></i> Dec 2024</span>
+                        <span><i class="fas fa-clock"></i> 5 min read</span>
+                        <span><i class="fas fa-external-link-alt"></i> External</span>
+                    </div>
+                    <p>Get a quick overview of Large Language Models (LLMs) — what they are, how they work, and their applications in today's AI landscape. Perfect for anyone looking to understand the basics of this transformative technology.</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">AI</span>
+                        <span class="blog-tag">Machine Learning</span>
+                        <span class="blog-tag">LLMs</span>
+                        <span class="blog-tag">Technology</span>
+                    </div>
+                    <a href="https://medium.com/@apurvjani21/a-5-minute-crash-course-on-large-language-models-llms-26992bdf6813" target="_blank" class="btn btn-amber">Read on Medium</a>
                 </article>
 
-                <!-- Advanced Robotics Control Systems -->
-                <article class="post-card">
-                    <div class="post-content">
-                        <h2>Advanced Robotics Control Systems</h2>
-                        <div class="post-meta">
-                            <span><i class="fas fa-calendar"></i> March 15, 2024</span>
-                            <span><i class="fas fa-clock"></i> 10 min read</span>
-                        </div>
-                        <p>Explore the cutting-edge world of robotics control systems, from real-time architectures to advanced algorithms and industry applications. Learn about the challenges, best practices, and future trends shaping the field.</p>
-                        <div class="post-tags">
-                            <span class="tag">Robotics</span>
-                            <span class="tag">Control Systems</span>
-                            <span class="tag">Automation</span>
-                        </div>
-                        <a href="articles/advanced-robotics-control.html" class="btn">Read More</a>
+                <!-- Post 2 -->
+                <article class="blog-card fade-in" style="margin-top: var(--space-lg);">
+                    <div class="blog-card-file">
+                        <i class="far fa-file-code"></i> advanced-robotics-control.md
                     </div>
+                    <h3>Advanced Robotics Control Systems</h3>
+                    <div class="blog-card-meta">
+                        <span><i class="fas fa-calendar"></i> Mar 15, 2024</span>
+                        <span><i class="fas fa-clock"></i> 10 min read</span>
+                    </div>
+                    <p>Explore the cutting-edge world of robotics control systems, from real-time architectures to advanced algorithms and industry applications. Learn about the challenges, best practices, and future trends shaping the field.</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Robotics</span>
+                        <span class="blog-tag">Control Systems</span>
+                        <span class="blog-tag">Automation</span>
+                    </div>
+                    <a href="articles/advanced-robotics-control.html" class="btn">Read Article</a>
                 </article>
 
-                <!-- Coming Soon -->
-                <article class="post-card">
-                    <div class="post-content">
-                        <h2>Coming Soon</h2>
-                        <div class="post-meta">
-                            <span><i class="fas fa-calendar"></i> Coming Soon</span>
-                        </div>
-                        <p>More articles about robotics, control systems, and technology are coming soon. Stay tuned for updates!</p>
-                        <div class="post-tags">
-                            <span class="tag">Coming Soon</span>
-                        </div>
+                <!-- Post 3 (Coming Soon) -->
+                <article class="blog-card fade-in" style="margin-top: var(--space-lg); opacity: 0.6;">
+                    <div class="blog-card-file">
+                        <i class="far fa-file-code"></i> coming-soon.md
+                    </div>
+                    <h3>Coming Soon</h3>
+                    <div class="blog-card-meta">
+                        <span><i class="fas fa-clock"></i> Pending...</span>
+                    </div>
+                    <p>More articles about driving controls, state estimation, ROS2, and fleet deployment in automated warehouses are coming soon. Stay tuned!</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Fleet Controls</span>
+                        <span class="blog-tag">State Estimation</span>
                     </div>
                 </article>
             </div>
@@ -114,20 +113,21 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Contact</h3>
-                    <p>Email: apurvakumar.jani@gmail.com</p>
+                    <h3>// Contact</h3>
+                    <p>apurvakumar.jani@gmail.com</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Follow Me</h3>
+                    <h3>// Connect</h3>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/apurvakumar-jani-06066778/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://scholar.google.com/citations?user=38tfKiIAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i></a>
-                        <a href="https://github.com/janiapurv" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/apurvakumar-jani-06066778/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://scholar.google.com/citations?user=38tfKiIAAAAJ&hl=en" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="https://github.com/janiapurv" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://medium.com/@apurvjani21" target="_blank" aria-label="Medium"><i class="fab fa-medium"></i></a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Apurvakumar Jani. All rights reserved.</p>
+                <p>&copy; 2025 Apurvakumar Jani. All rights reserved. Built with <span style="color: var(--terminal-green);">&lt;/&gt;</span> and ☕</p>
             </div>
         </div>
     </footer>
@@ -135,4 +135,4 @@
     <!-- JavaScript -->
     <script src="js/main.js"></script>
 </body>
-</html> 
+</html>

@@ -1,107 +1,170 @@
-// Navigation
+/* ============================================
+   MAIN.JS — Boot Sequence, Nav, Animations
+   ============================================ */
+
 document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        hamburger.classList.toggle('active');
-    });
+  // ── Boot Sequence ──
+  initBootSequence();
 
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-            navLinks.classList.remove('active');
-            hamburger.classList.remove('active');
-        }
-    });
+  // ── Navigation ──
+  initNavigation();
 
-    // Close mobile menu when clicking on a link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            hamburger.classList.remove('active');
-        });
-    });
+  // ── Scroll Effects ──
+  initScrollEffects();
 
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-
-    // Navbar background change on scroll
-    window.addEventListener('scroll', () => {
-        const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-            navbar.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
-        } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-            navbar.style.boxShadow = 'none';
-        }
-    });
-
-    // Intersection Observer for fade-in animations
-    const observerOptions = {
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-
-    // Observe all sections
-    document.querySelectorAll('section').forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(20px)';
-        section.style.transition = 'all 0.5s ease-out';
-        observer.observe(section);
-    });
+  // ── Fade-In Observer ──
+  initFadeInObserver();
 });
 
-// Google Analytics Event Tracking
-function trackEvent(category, action, label) {
-    if (typeof gtag !== 'undefined') {
-        gtag('event', action, {
-            'event_category': category,
-            'event_label': label
-        });
-    }
+/* ────────────────────────────────────────────
+   BOOT SEQUENCE
+   ──────────────────────────────────────────── */
+function initBootSequence() {
+  const overlay = document.getElementById('boot-overlay');
+  if (!overlay) return;
+
+  const lines = overlay.querySelectorAll('.boot-line');
+  if (lines.length === 0) {
+    overlay.classList.add('hidden');
+    return;
+  }
+
+  // Check if user has already seen boot this session
+  if (sessionStorage.getItem('boot-seen')) {
+    overlay.classList.add('hidden');
+    return;
+  }
+
+  let delay = 300;
+  lines.forEach((line, i) => {
+    const lineDelay = delay + i * 400;
+    setTimeout(() => {
+      line.classList.add('visible');
+    }, lineDelay);
+  });
+
+  // Fade out overlay after all lines
+  const totalTime = delay + lines.length * 400 + 800;
+  setTimeout(() => {
+    overlay.classList.add('hidden');
+    sessionStorage.setItem('boot-seen', 'true');
+  }, totalTime);
 }
 
-// Track publication clicks
-document.querySelectorAll('.publication-card').forEach(card => {
-    card.addEventListener('click', () => {
-        const title = card.querySelector('h3').textContent;
-        trackEvent('Publications', 'Click', title);
-    });
-});
+/* ────────────────────────────────────────────
+   NAVIGATION
+   ──────────────────────────────────────────── */
+function initNavigation() {
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
 
-// Track social media clicks
-document.querySelectorAll('.social-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        const platform = link.getAttribute('href').includes('linkedin') ? 'LinkedIn' :
-                        link.getAttribute('href').includes('scholar') ? 'Google Scholar' :
-                        'GitHub';
-        trackEvent('Social Media', 'Click', platform);
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
     });
-});
 
-// Add loading animation for images
-document.querySelectorAll('img').forEach(img => {
-    img.addEventListener('load', () => {
-        img.style.opacity = '1';
+    // Close on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+      });
     });
-    img.style.opacity = '0';
-    img.style.transition = 'opacity 0.3s ease-in';
-}); 
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+      }
+    });
+  }
+}
+
+/* ────────────────────────────────────────────
+   SCROLL EFFECTS
+   ──────────────────────────────────────────── */
+function initScrollEffects() {
+  const navbar = document.querySelector('.navbar');
+  if (!navbar) return;
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        if (window.scrollY > 20) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+}
+
+/* ────────────────────────────────────────────
+   INTERSECTION OBSERVER — Fade In
+   ──────────────────────────────────────────── */
+function initFadeInObserver() {
+  const fadeEls = document.querySelectorAll('.fade-in');
+  if (fadeEls.length === 0) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+  );
+
+  fadeEls.forEach(el => observer.observe(el));
+}
+
+/* ────────────────────────────────────────────
+   CONTACT FORM (used by contact.html)
+   ──────────────────────────────────────────── */
+function initContactForm() {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const statusEl = document.getElementById('form-status');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        statusEl.className = 'form-status success';
+        statusEl.textContent = '✓ Message delivered. Connection closed.';
+        form.reset();
+      } else {
+        throw new Error('Server error');
+      }
+    } catch (err) {
+      statusEl.className = 'form-status error';
+      statusEl.textContent = '✗ Connection refused. Try again.';
+    } finally {
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+    }
+  });
+}
