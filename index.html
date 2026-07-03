@@ -104,8 +104,10 @@
                         <div class="info-line"><span class="info-label">Role:</span> <span class="info-value">Senior Robotics Software Engineer</span></div>
                         <div class="info-line"><span class="info-label">Shell:</span> <span class="info-value">C++, Python, Bash, MATLAB</span></div>
                         <div class="info-line"><span class="info-label">DE:</span> <span class="info-value">ROS2 + Gazebo</span></div>
+                        <div class="info-line"><span class="info-label">AI &amp; LLM:</span> <span class="info-value">Gemini API, LangChain, PyTorch</span></div>
+                        <div class="info-line"><span class="info-label">VLA Models:</span> <span class="info-value">ROS2-LLM Task Planner Bridge</span></div>
                         <div class="info-line"><span class="info-label">Uptime:</span> <span class="info-value">8+ years in robotics engineering</span></div>
-                        <div class="info-line"><span class="info-label">Packages:</span> <span class="info-value">Behavior Trees, Kalman Filters, Particle Filters, CANopen, LiDAR</span></div>
+                        <div class="info-line"><span class="info-label">Packages:</span> <span class="info-value">Behavior Trees, Kalman/Particle Filters, CANopen, LiDAR</span></div>
                         <div class="info-line"><span class="info-label">Education:</span> <span class="info-value">MS in Mechatronics & Control, UB (GPA 3.9)</span></div>
                         <div class="info-line"><span class="info-label">Core Target:</span> <span class="info-value">1,000+ autonomous warehouse robots</span></div>
                         <div class="neofetch-colors">
@@ -119,6 +121,31 @@
                             <span style="background: var(--text-primary);"></span>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Robot VLA Simulator Section -->
+    <section class="section" id="agent-demo" style="padding-top: 0;">
+        <div class="container">
+            <h2 class="section-title fade-in"><span class="prompt">$</span> ./prompt_robot.sh</h2>
+            <div class="neofetch-box fade-in">
+                <div class="stats-header">// Interactive Prompt-to-Action Robot Planner</div>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.9rem; line-height: 1.6;">
+                    Select a high-level natural language command below to see how a Vision-Language-Action (VLA) agent translates human intent into ROS2 actuator trajectories:
+                </p>
+                <div style="margin-bottom: 1.5rem; font-family: var(--font-mono); font-size: 0.85rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem;">
+                    <span style="color: var(--terminal-green); font-weight: bold;">Select Command:</span>
+                    <select id="robot-cmd-select" style="background: var(--bg-code); border: 1px solid var(--border-color); color: var(--text-primary); font-family: var(--font-mono); padding: 0.4rem; border-radius: var(--radius-sm); outline: none; cursor: pointer;">
+                        <option value="sort">"Identify and sort the red cylinders on the conveyor belt"</option>
+                        <option value="fragile">"Gently grasp the fragile block and stack it in the bin"</option>
+                        <option value="navigate">"Navigate to warehouse quadrant 4 avoiding active obstacles"</option>
+                    </select>
+                    <button id="run-robot-cmd" class="btn btn-amber" style="padding: 0.4rem 1.2rem;">[Run]</button>
+                </div>
+                <div id="robot-terminal-output" style="background: var(--bg-code); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 1.2rem; min-height: 200px; font-family: var(--font-mono); font-size: 0.82rem; line-height: 1.8; color: var(--text-secondary); overflow-y: auto;">
+                    <span style="color: var(--text-dim);">// Click [Run] to execute command planner...</span>
                 </div>
             </div>
         </div>
@@ -152,14 +179,14 @@
                     </div>
                 </div>
                 <div class="skill-category fade-in stagger-3">
-                    <h3><i class="fas fa-code"></i> Engineering Tools</h3>
+                    <h3><i class="fas fa-brain"></i> AI, Languages &amp; Tools</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">C++</span>
-                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">LLM Task Planning</span>
+                        <span class="skill-tag">VLA Models</span>
+                        <span class="skill-tag">C++ / Python</span>
+                        <span class="skill-tag">PyTorch</span>
                         <span class="skill-tag">MATLAB / Simulink</span>
-                        <span class="skill-tag">LabVIEW</span>
                         <span class="skill-tag">Linux / Shell</span>
-                        <span class="skill-tag">PLC Siemens</span>
                     </div>
                 </div>
                 <div class="skill-category fade-in stagger-4">
