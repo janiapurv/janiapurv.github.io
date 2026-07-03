@@ -188,7 +188,7 @@ function initInteractiveMatrixRain() {
   canvas.style.height = '100vh';
   canvas.style.zIndex = '0';
   canvas.style.pointerEvents = 'none';
-  canvas.style.opacity = '0.12';
+  canvas.style.opacity = '1.0';
 
   const ctx = canvas.getContext('2d');
 
@@ -265,12 +265,12 @@ function initInteractiveMatrixRain() {
       if (distance < 120) {
         // Bright green/cyan glow near the mouse
         const factor = (120 - distance) / 120; // 0 to 1
-        ctx.fillStyle = `rgba(34, 211, 238, ${0.15 + factor * 0.7})`;
-        ctx.shadowColor = 'var(--accent-cyan)';
-        ctx.shadowBlur = 8;
+        ctx.fillStyle = `rgba(34, 211, 238, ${0.2 + factor * 0.75})`;
+        ctx.shadowColor = 'rgba(34, 211, 238, 0.8)';
+        ctx.shadowBlur = 6;
       } else {
-        // Regular falling term
-        ctx.fillStyle = 'rgba(0, 255, 65, 0.25)';
+        // Regular falling term - very faint to avoid distracting
+        ctx.fillStyle = 'rgba(0, 255, 65, 0.06)';
         ctx.shadowBlur = 0;
       }
 
