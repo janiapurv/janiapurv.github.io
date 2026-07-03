@@ -283,7 +283,7 @@ function initInteractiveMatrixRain() {
       }
 
       // Move drops down at varying speeds
-      drops[i] += 0.8;
+      drops[i] += 0.25;
     }
 
     requestAnimationFrame(draw);
