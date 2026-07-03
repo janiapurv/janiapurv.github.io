@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── Fade-In Observer ──
   initFadeInObserver();
+
+  // ── Interactive Matrix Rain Background ──
+  initInteractiveMatrixRain();
 });
 
 /* ────────────────────────────────────────────
@@ -167,4 +170,125 @@ function initContactForm() {
       submitBtn.disabled = false;
     }
   });
+}
+
+/* ────────────────────────────────────────────
+   INTERACTIVE TERMINAL MATRIX RAIN BACKGROUND
+   ──────────────────────────────────────────── */
+function initInteractiveMatrixRain() {
+  const canvas = document.createElement('canvas');
+  canvas.id = 'terminal-canvas';
+  document.body.appendChild(canvas);
+
+  // Apply basic styles dynamically (also backstopped in CSS)
+  canvas.style.position = 'fixed';
+  canvas.style.top = '0';
+  canvas.style.left = '0';
+  canvas.style.width = '100vw';
+  canvas.style.height = '100vh';
+  canvas.style.zIndex = '0';
+  canvas.style.pointerEvents = 'none';
+  canvas.style.opacity = '0.12';
+
+  const ctx = canvas.getContext('2d');
+
+  let width = (canvas.width = window.innerWidth);
+  let height = (canvas.height = window.innerHeight);
+
+  // Robotics, controls, and mechatronics terms
+  const terms = [
+    '0', '1', 'ROS2', 'C++', 'Python', 'LiDAR', 'Kalman', 'ParticleFilter', 'PID', 
+    'x', 'y', 'z', 'theta', 'omega', 'tau', 'u', 'e', 'dt', 'matrix', 'swarm', 
+    'state', 'dynamics', 'trajectory', 'jacobian', 'kinematics', 'imu', 'canopen', 
+    'estimation', 'planning', 'controller', 'odometry', 'slam', 'gazebo', 'robot'
+  ];
+
+  const fontSize = 13;
+  let columns = Math.floor(width / 22); // space out columns slightly
+
+  // Array of drops - one per column, initialized at random offscreen coordinates
+  const drops = [];
+  const columnTerms = []; // Store which term is currently falling in this column
+  
+  for (let i = 0; i < columns; i++) {
+    drops[i] = Math.random() * -100; // start off-screen
+    columnTerms[i] = terms[Math.floor(Math.random() * terms.length)];
+  }
+
+  // Mouse tracking
+  let mouseX = -1000;
+  let mouseY = -1000;
+
+  window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  window.addEventListener('mouseleave', () => {
+    mouseX = -1000;
+    mouseY = -1000;
+  });
+
+  // Handle window resizing
+  window.addEventListener('resize', () => {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+    columns = Math.floor(width / 22);
+    
+    // Re-initialize arrays for new width
+    drops.length = 0;
+    columnTerms.length = 0;
+    for (let i = 0; i < columns; i++) {
+      drops[i] = Math.random() * -100;
+      columnTerms[i] = terms[Math.floor(Math.random() * terms.length)];
+    }
+  });
+
+  function draw() {
+    // Faint overlay to create trail effect
+    ctx.fillStyle = 'rgba(10, 14, 23, 0.08)';
+    ctx.fillRect(0, 0, width, height);
+
+    ctx.font = fontSize + 'px "JetBrains Mono", monospace';
+
+    for (let i = 0; i < columns; i++) {
+      const text = columnTerms[i];
+      const x = i * 22;
+      const y = drops[i] * fontSize;
+
+      // Calculate distance to mouse cursor
+      const dx = x - mouseX;
+      const dy = y - mouseY;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      // Flashlight interactivity: characters close to the mouse light up in glowing cyan
+      if (distance < 120) {
+        // Bright green/cyan glow near the mouse
+        const factor = (120 - distance) / 120; // 0 to 1
+        ctx.fillStyle = `rgba(34, 211, 238, ${0.15 + factor * 0.7})`;
+        ctx.shadowColor = 'var(--accent-cyan)';
+        ctx.shadowBlur = 8;
+      } else {
+        // Regular falling term
+        ctx.fillStyle = 'rgba(0, 255, 65, 0.25)';
+        ctx.shadowBlur = 0;
+      }
+
+      ctx.fillText(text, x, y);
+
+      // If the drop has reached the bottom of the screen, reset to top randomly
+      if (y > height && Math.random() > 0.975) {
+        drops[i] = 0;
+        columnTerms[i] = terms[Math.floor(Math.random() * terms.length)];
+      }
+
+      // Move drops down at varying speeds
+      drops[i] += 0.8;
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  // Start loop
+  draw();
 }
