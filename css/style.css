@@ -140,19 +140,49 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================================
-   BACKGROUND GRID PATTERN
+   BACKGROUND EFFECTS (Grid + Ambient Glows)
    ============================================ */
 body::before {
   content: '';
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
+  /* Technical dot grid and line grid combination */
   background-image:
-    linear-gradient(rgba(0, 255, 65, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 255, 65, 0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
+    radial-gradient(rgba(0, 255, 65, 0.09) 1px, transparent 1px),
+    linear-gradient(rgba(0, 255, 65, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 65, 0.02) 1px, transparent 1px);
+  background-size: 20px 20px, 80px 80px, 80px 80px;
   pointer-events: none;
   z-index: 0;
+  opacity: 0.85;
+}
+
+/* Ambient glow mesh background elements */
+body::after {
+  content: '';
+  position: fixed;
+  top: -20%; left: -20%;
+  width: 140%; height: 140%;
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(0, 255, 65, 0.05) 0%, transparent 45%),
+    radial-gradient(circle at 75% 75%, rgba(34, 211, 238, 0.04) 0%, transparent 45%),
+    radial-gradient(circle at 80% 20%, rgba(255, 176, 0, 0.03) 0%, transparent 40%);
+  pointer-events: none;
+  z-index: -1;
+  animation: float-glows 25s ease-in-out infinite alternate;
+}
+
+@keyframes float-glows {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(3%, 4%) scale(1.05);
+  }
+  100% {
+    transform: translate(-2%, 2%) scale(0.95);
+  }
 }
 
 body > *:not(.boot-overlay) {
