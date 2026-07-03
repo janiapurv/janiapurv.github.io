@@ -114,5 +114,5 @@ function handleApiError(error) {
 
 // Initialize when the page loads
 document.addEventListener('DOMContentLoaded', () => {
-    fetchCitationData().catch(handleApiError);
+    fallbackToStaticData();
 }); 
