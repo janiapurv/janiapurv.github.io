@@ -245,9 +245,8 @@ function initInteractiveMatrixRain() {
   });
 
   function draw() {
-    // Faint overlay to create trail effect
-    ctx.fillStyle = 'rgba(10, 14, 23, 0.08)';
-    ctx.fillRect(0, 0, width, height);
+    // Clear canvas completely to keep text 100% sharp and readable (no alpha-trail smear)
+    ctx.clearRect(0, 0, width, height);
 
     ctx.font = fontSize + 'px "JetBrains Mono", monospace';
 
@@ -263,14 +262,14 @@ function initInteractiveMatrixRain() {
 
       // Flashlight interactivity: characters close to the mouse light up in glowing cyan
       if (distance < 120) {
-        // Bright green/cyan glow near the mouse
         const factor = (120 - distance) / 120; // 0 to 1
-        ctx.fillStyle = `rgba(34, 211, 238, ${0.2 + factor * 0.75})`;
+        ctx.fillStyle = `rgba(34, 211, 238, ${0.3 + factor * 0.7})`;
         ctx.shadowColor = 'rgba(34, 211, 238, 0.8)';
-        ctx.shadowBlur = 6;
+        ctx.shadowBlur = 4;
       } else {
-        // Regular falling term - very faint to avoid distracting
-        ctx.fillStyle = 'rgba(0, 255, 65, 0.06)';
+        // Regular falling term - very faint to avoid distracting but clear
+        ctx.fillStyle = 'rgba(0, 255, 65, 0.08)';
+        ctx.shadowColor = 'transparent';
         ctx.shadowBlur = 0;
       }
 
