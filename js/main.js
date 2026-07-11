@@ -17,6 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── Interactive Matrix Rain Background ──
   initInteractiveMatrixRain();
+
+  // ── Interactive Robot VLA Task Planner Simulator ──
+  initRobotSimulator();
 });
 
 /* ────────────────────────────────────────────
@@ -290,4 +293,99 @@ function initInteractiveMatrixRain() {
 
   // Start loop
   draw();
+}
+
+/* ────────────────────────────────────────────
+   INTERACTIVE ROBOT VLA SIMULATOR
+   ──────────────────────────────────────────── */
+function initRobotSimulator() {
+  const select = document.getElementById('robot-cmd-select');
+  const runBtn = document.getElementById('run-robot-cmd');
+  const output = document.getElementById('robot-terminal-output');
+  if (!select || !runBtn || !output) return;
+
+  const traces = {
+    sort: [
+      { text: 'root@apurva:~$ ./prompt_robot.sh --cmd "sort red cylinders"', color: 'var(--terminal-green)' },
+      { text: '[AGENT] Parsing natural language intent...', color: 'var(--text-secondary)' },
+      { text: '[LLM]   Generated task plan:\n  1. Scan workspace using OpenCV camera node\n  2. Filter red HSV range for cylinder centroids\n  3. Call /manipulator/trajectory planning service\n  4. Grasp with high gripper stiffness (cylinder)', color: 'var(--accent-cyan)' },
+      { text: '[ROS2]  Starting shape detection node...', color: 'var(--text-secondary)' },
+      { text: '[OPENCV] Found 3 red centroids at coordinates: X:[12, 14, 18], Y:[45, 46, 42]', color: 'var(--terminal-amber)' },
+      { text: '[ROS2]  Computing arm inverse kinematics...', color: 'var(--text-secondary)' },
+      { text: '[CONTROLLER] Publishing trajectories to joints...', color: 'var(--text-secondary)' },
+      { text: '[ROS2]  Closing gripper. Stiffness set to 2.4 N/mm.', color: 'var(--text-secondary)' },
+      { text: '[SUCCESS] All red cylinders successfully sorted. Connection closed.', color: 'var(--terminal-green)' }
+    ],
+    fragile: [
+      { text: 'root@apurva:~$ ./prompt_robot.sh --cmd "grasp fragile block"', color: 'var(--terminal-green)' },
+      { text: '[AGENT] Parsing natural language intent...', color: 'var(--text-secondary)' },
+      { text: '[LLM]   Detected safety-critical keyword: "fragile"\n  1. Position arm above target block\n  2. Set Modular Magnetic Gripper to lowest stiffness (0.4 N/mm)\n  3. Execute slow, smooth trajectory (max accel: 0.1 rad/s^2)\n  4. Validate grasp via force feedback sensor', color: 'var(--accent-cyan)' },
+      { text: '[ROS2]  Activating variable stiffness control service...', color: 'var(--text-secondary)' },
+      { text: '[CANOPEN] Sending PDO to magnetic coil driver: SetCurrent=0.2A', color: 'var(--terminal-amber)' },
+      { text: '[ROS2]  Stiffness adjusted to 0.4 N/mm (compliance enabled).', color: 'var(--text-secondary)' },
+      { text: '[CONTROLLER] Executing compliant approach trajectory...', color: 'var(--text-secondary)' },
+      { text: '[SENSORS] Force sensor: 0.8N threshold reached. Grasp stabilized.', color: 'var(--text-secondary)' },
+      { text: '[SUCCESS] Fragile block stacked safely. Connection closed.', color: 'var(--terminal-green)' }
+    ],
+    navigate: [
+      { text: 'root@apurva:~$ ./prompt_robot.sh --cmd "navigate quadrant 4"', color: 'var(--terminal-green)' },
+      { text: '[AGENT] Parsing natural language intent...', color: 'var(--text-secondary)' },
+      { text: '[LLM]   Generated navigation intent:\n  1. Query active map from SLAM node\n  2. Generate path planning path via hybrid A*\n  3. Engage driving controller loop (max speed: 1.5 m/s)\n  4. Track local dynamic obstacles using 2D LiDAR scans', color: 'var(--accent-cyan)' },
+      { text: '[ROS2]  Calling path planner service...', color: 'var(--text-secondary)' },
+      { text: '[PLANNER] Path generated successfully. Total length: 42.5m.', color: 'var(--text-secondary)' },
+      { text: '[LIDAR] Scanning active quadrant. Dynamic obstacle detected at X:15.2, Y:12.4', color: 'var(--accent-red)' },
+      { text: '[LLM]   Re-routing path: Generating avoidance trajectory...', color: 'var(--accent-cyan)' },
+      { text: '[ESTIMATOR] Localization status: Kalman Filter covariance = 0.02 (Stable)', color: 'var(--terminal-amber)' },
+      { text: '[SUCCESS] Reached target quadrant 4. Connection closed.', color: 'var(--terminal-green)' }
+    ]
+  };
+
+  let typingTimeout;
+
+  runBtn.addEventListener('click', () => {
+    // Clear output and any existing timeout
+    clearTimeout(typingTimeout);
+    output.innerHTML = '';
+    runBtn.disabled = true;
+
+    const key = select.value;
+    const lines = traces[key];
+    let lineIdx = 0;
+
+    function typeLine() {
+      if (lineIdx < lines.length) {
+        const line = lines[lineIdx];
+        const p = document.createElement('div');
+        p.style.color = line.color;
+        // Check if there is newline
+        if (line.text.includes('\n')) {
+          p.style.whiteSpace = 'pre';
+        }
+        output.appendChild(p);
+
+        // Type out text character by character
+        let charIdx = 0;
+        const text = line.text;
+
+        function typeChar() {
+          if (charIdx < text.length) {
+            p.textContent += text[charIdx];
+            charIdx++;
+            output.scrollTop = output.scrollHeight;
+            typingTimeout = setTimeout(typeChar, 8); // fast typing speed
+          } else {
+            lineIdx++;
+            output.scrollTop = output.scrollHeight;
+            typingTimeout = setTimeout(typeLine, 250); // delay between lines
+          }
+        }
+
+        typeChar();
+      } else {
+        runBtn.disabled = false;
+      }
+    }
+
+    typeLine();
+  });
 }
